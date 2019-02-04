@@ -1,6 +1,15 @@
-Search users: <input type='text' [(ngModel)]='userName'>
-<button (click)='search()'>Search</button>
-<div *ngIf='response'>
-  <img src='{{response.items.avatar_url}}'>
-  <p>{{response.items[0].login}}</p>
+Search users: <input type="text" [(ngModel)]="userName" />
+<button (click)="search()">Search</button>
+<div *ngIf="response">
+  <div class='response' *ngFor="let item of response.items; trackBy: trackByFn">
+    <div class='left-info'>
+      <div class="avatar"><img src="{{ item.avatar_url }}" /></div>
+      <p>{{ item.login }}</p>
+    </div>
+    <div class='right-info'></div>
+    <ul>
+    <li><a href="{{ item.html_url }}">Open on Github</a></li>
+    <li><a routerLink="{{ item.login }}">Open profile</a></li>
+  </ul>
+  </div>
 </div>

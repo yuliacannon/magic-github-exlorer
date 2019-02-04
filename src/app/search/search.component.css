@@ -1,0 +1,23 @@
+.avatar{
+    width: 100px;
+}
+
+.avatar img{
+    border-radius: 50%;
+    width: 100%;
+}
+
+.left-info{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+p{
+    padding: 0 10px;
+}
+
+.response{
+    display: flex;
+    justify-content: space-between;
+}
