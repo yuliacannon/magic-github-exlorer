@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+}
+html,body {
+    min-height: 100%;
+    font-size: 40px;
+    
+}
+
+header{
+    padding: 30px;
+    background-color: #e8f7ff;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    width: 200px;
+}
+
+.logo img {
+    width: 100%;
+    /* height: auto; */
+}
+
+footer{
+    padding: 30px;
+    background-color: #e8f7ff;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
+
+.nav-item{
+    padding: 0 5px;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:visited{
+    color: #000;
+}

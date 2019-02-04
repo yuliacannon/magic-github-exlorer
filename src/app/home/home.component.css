@@ -1,0 +1,23 @@
+.logo{
+    width: 500px;
+    display: inline-block;
+}
+
+.logo img{
+    width: 100%;
+}
+
+.article{
+    display: flex;
+    justify-content: space-around;
+}
+
+p{
+    display: inline-block;
+    width: 50%;
+    text-align: justify;
+}
+
+h1{
+    text-align: center;
+}
