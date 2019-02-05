@@ -1,15 +1,28 @@
 Search users: <input type="text" [(ngModel)]="userName" />
 <button (click)="search()">Search</button>
 <div *ngIf="response">
-  <div class='response' *ngFor="let item of response.items; trackBy: trackByFn">
-    <div class='left-info'>
+  <div
+    class="response"
+    *ngFor="
+      let item of (response.items
+        | paginate
+          : {
+              itemsPerPage: 20,
+              currentPage: p,
+              totalItems: response.total_count
+            })
+    "
+  >
+    <div class="left-info">
       <div class="avatar"><img src="{{ item.avatar_url }}" /></div>
       <p>{{ item.login }}</p>
     </div>
-    <div class='right-info'></div>
+    <div class="right-info"></div>
     <ul>
-    <li><a href="{{ item.html_url }}">Open on Github</a></li>
-    <li><a routerLink="{{ item.login }}">Open profile</a></li>
-  </ul>
+      <li><a href="{{ item.html_url }}">Open on Github</a></li>
+      <li><a routerLink="{{ item.login }}">Open profile</a></li>
+    </ul>
   </div>
+
+  <pagination-controls (pageChange)="pageChange($event)"></pagination-controls>
 </div>
