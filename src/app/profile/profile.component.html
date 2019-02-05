@@ -1,3 +1,12 @@
-<div class='profile' *ngIf='responseUser'>
-  <img src='responseUser.avatar_url'>
+<div class='profile' *ngIf='response'>
+  <img src='{{response.avatar_url}}'>
+  <p>{{response.login}}</p>
+  <p>{{response.html_url}}</p>
+  <p>{{response.name}}</p>
+  <p>{{response.created_at}}</p>
+  <p>{{response.location}}</p>
+  <p>{{response.company}}</p>
+  <p>{{response.email}}</p>
+  <h1>Repos</h1>
+  
 </div>
