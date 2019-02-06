@@ -1,12 +1,34 @@
-<div class='profile' *ngIf='response'>
-  <img src='{{response.avatar_url}}'>
-  <p>{{response.login}}</p>
-  <p>{{response.html_url}}</p>
-  <p>{{response.name}}</p>
-  <p>{{response.created_at}}</p>
-  <p>{{response.location}}</p>
-  <p>{{response.company}}</p>
-  <p>{{response.email}}</p>
-  <h1>Repos</h1>
-  
+<div class="profile" *ngIf="response">
+  <header>
+    <div class="avatar"><img src="{{ response.avatar_url }}" /></div>
+    <h1 class="login">{{ response.login }}</h1>
+    <p><a href="{{ response.html_url }}">View On Github</a></p>
+  </header>
+  <hr />
+  <ul>
+    <li><i class="far fa-user"></i>{{ response.name }}</li>
+    <li>
+      <i class="far fa-clock"></i>{{ response.created_at | date: "fullDate" }}
+    </li>
+    <li><i class="fas fa-map-marker-alt"></i>{{ response.location }}</li>
+    <li><i class="fas fa-briefcase"></i>{{ response.company }}</li>
+    <li><i class="fas fa-envelope"></i>{{ response.email }}</li>
+  </ul>
+  <h1>Repositories</h1>
+  <hr />
+  <ul class="repos" *ngIf="responseR">
+    <li
+      *ngFor="
+        let item of (responseR
+          | paginate
+            : {
+                itemsPerPage: 20,
+                currentPage: p,
+                totalItems: response.total_count
+              })
+      "
+    >
+      <a href="{{ item.html_url }}">{{ item.name }}</a>
+    </li>
+  </ul>
 </div>

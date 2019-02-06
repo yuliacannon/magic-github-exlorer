@@ -1,0 +1,57 @@
+.profile {
+  margin: 20px 15%;
+  text-align: center;
+}
+
+.avatar {
+  width: 100px;
+}
+
+.avatar img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+h1 {
+  display: inline-block;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+header > p {
+  display: inline-block;
+}
+
+ul {
+  margin-top: 30px;
+}
+i {
+  padding: 0 10px;
+}
+li {
+  list-style: none;
+  margin: 20px 0;
+  text-align: left;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+.repos {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.repos li {
+  display: inline-block;
+  margin: 0 10px;
+  line-height: 1.5em;
+}

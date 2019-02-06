@@ -1,5 +1,10 @@
-Search users: <input type="text" [(ngModel)]="userName" />
-<button (click)="search()">Search</button>
+<div class="search">
+  <label for="site-search">Search Users</label>
+  <div>
+    <input type="text" placeholder="user" [(ngModel)]="userName" />
+    <button (click)="search()">Search</button>
+  </div>
+</div>
 <div *ngIf="response">
   <div
     class="response"
